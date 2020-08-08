@@ -1,0 +1,59 @@
+'UI dependencies':
+  image: node:10-alpine
+  stage: dependencies
+  only:
+    changes:
+      - frontend/**/*
+      - .gitlab-ci.yml
+  artifacts:
+    paths:
+      - frontend/node_modules/
+  dependencies: []
+  script:
+    - cd frontend
+    - npm install
+
+'UI tests':
+  image: node:10-alpine
+  stage: test
+  only:
+    changes:
+      - frontend/**/*
+      - .gitlab-ci.yml
+  artifacts:
+    paths:
+      - frontend/src/
+  dependencies: []
+  script:
+    - cd frontend
+    - npm test
+
+'UI build':
+  image: node:10-alpine
+  stage: build
+  only:
+    changes:
+      - frontend/**/*
+      - .gitlab-ci.yml
+  artifacts:
+    paths:
+      - frontend/dist/
+  dependencies:
+    - 'UI dependencies'
+  script:
+    - cd frontend
+    - npm run build
+
+'UI deploy':
+  stage: deploy
+  image: "ruby:2.5"
+  script:
+    - apt-get update -qy
+    - apt-get install rubygems ruby-dev -y
+    - gem install dpl
+    - cd frontend
+    - dpl --provider=heroku --app=$HEROKU_OOWLISH_CHALLENGE_FRONTEND --api-key=$HEROKU_API_KEY --skip_cleanup
+  only:
+    changes:
+      - frontend/**/*
+      - .gitlab-ci.yml

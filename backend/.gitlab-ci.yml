@@ -1,0 +1,43 @@
+'API dependencies':
+  image: node:10-alpine
+  stage: dependencies
+  only:
+    changes:
+      - backend/**/*
+      - .gitlab-ci.yml
+  artifacts:
+    paths:
+      - backend/node_modules/
+  dependencies: []
+  script:
+    - cd backend
+    - npm install
+
+'API tests':
+  image: node:10-alpine
+  stage: test
+  only:
+    changes:
+      - backend/**/*
+      - .gitlab-ci.yml
+  artifacts:
+    paths:
+      - backend/
+  dependencies: []
+  script:
+    - cd backend
+    - npm test
+
+'API deploy':
+  stage: deploy
+  image: "ruby:2.5"
+  script:
+    - apt-get update -qy
+    - apt-get install rubygems ruby-dev -y
+    - gem install dpl
+    - cd backend
+    - dpl --provider=heroku --app=$HEROKU_OOWLISH_CHALLENGE_BACKEND --api-key=$HEROKU_API_KEY --skip_cleanup
+  only:
+    changes:
+      - backend/**/*
+      - .gitlab-ci.yml

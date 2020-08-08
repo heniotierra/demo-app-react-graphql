@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+    backend:
+        container_name: oowlish-challenge-backend
+        build:
+            context: backend
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./backend:/app
+            - /app/node_modules
+    frontent:
+        container_name: oowlish-challenge-frontend
+        build:
+            context: frontend
+            dockerfile: Dockerfile
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        ports:
+            - "3000:3000"
+        environment:
+            - CHOKIDAR_USEPOLING=true

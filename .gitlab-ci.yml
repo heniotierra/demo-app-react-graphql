@@ -1,0 +1,9 @@
+stages:
+  - dependencies
+  - test
+  - build
+  - deploy
+
+include:
+  - '/frontend/.gitlab-ci.yml'
+  - '/backend/.gitlab-ci.yml'
