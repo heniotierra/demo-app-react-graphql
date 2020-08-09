@@ -16,7 +16,7 @@ export const Card = styled.div`
   background-color: ${colors.midPrimary};
   cursor: pointer;
   padding: 7px;
-  box-shadow: ${shadows.light};
+  box-shadow: ${shadows.mid};
   :hover {
     background-color: ${colors.primary};
   }

@@ -1,5 +1,5 @@
 export const shadows = {
-  light: '7px 10px 7px #e2dede',
+  mid: '7px 10px 7px #938f8f',
 };
 
 export const fontSizes = {
