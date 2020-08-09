@@ -38,7 +38,7 @@
       - .gitlab-ci.yml
   artifacts:
     paths:
-      - frontend/dist/
+      - frontend/build/
   dependencies:
     - 'UI dependencies'
   script:
