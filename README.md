@@ -14,7 +14,7 @@ Requirements:
 - node
 - Docker
 
-Compile the Docker images:
+Build the Docker images:
 
     $ docker-compose up -d --build
 
@@ -36,7 +36,7 @@ The backend:
     $ cd backend
     $ npm start
 
-For deploy (to Heroku - requires authentication)
+For deploying (to Heroku)
 -----------
 
     git push origin master

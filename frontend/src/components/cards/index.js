@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { shadows } from '../../style';
+import { colors } from '../../style';
 
 export const Card = styled.div`
   float: left;
@@ -11,12 +12,13 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #bebdba;
+  color: ${colors.secondary};
+  background-color: ${colors.midPrimary};
   cursor: pointer;
   padding: 7px;
   box-shadow: ${shadows.light};
   :hover {
-    background-color: lightgray;
+    background-color: ${colors.primary};
   }
   div {
     margin: 7px;

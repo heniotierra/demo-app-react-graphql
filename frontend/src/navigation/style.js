@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { colors } from '../style';
 
 const hideMenu = keyframes`
   0% {
@@ -40,6 +41,7 @@ export const NavigationStyle = styled.div`
     }
 
     .app-name {
+      color: ${colors.primary};
       align-self: flex-start;
       flex-direction: column;
       display: flex;
@@ -48,12 +50,14 @@ export const NavigationStyle = styled.div`
       font-size: 26px;
       font-weight: bold;
       text-align: center;
+
       span {
         margin-top: 9px;
       }
     }
 
     .logout-btn {
+      color: ${colors.primary};
       align-self: flex-end;
       display: flex;
       flex-direction: column;
@@ -80,7 +84,8 @@ export const NavigationStyle = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: lightgray;
+      background-color: ${colors.primary};
+      background-image: linear-gradient(to top right, ${colors.primary}, ${colors.lightPrimary});
       height: calc(100vh - 70px);
       width: 200px;
       border-top-right-radius: 15px;
@@ -89,12 +94,18 @@ export const NavigationStyle = styled.div`
       div {
         padding: 5px;
         
+        a {
+          font-size: 16px;
+          text-decoration: none;
+          font-size: 1.5rem;
+        }
+
         a:link {
-          color: black;
+          color: ${colors.secondary};
         }
         
         a:visited {
-          color: black;
+          color: ${colors.secondary};
         }
         
         a:hover {
@@ -102,7 +113,7 @@ export const NavigationStyle = styled.div`
         }
         
         a:active {
-          color: black;
+          color: ${colors.secondary};
         }
       }
     }

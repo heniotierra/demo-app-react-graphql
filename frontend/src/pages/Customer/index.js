@@ -8,6 +8,7 @@ import HereMap from '../../services/maps';
 import Map from '../../components/map';
 import { SimpleBtn } from '../../components/buttons';
 import { environment } from '../../constants';
+import { CustomerData } from './style';
 
 export const HereJsKey = 'oIFgxdTYc381Qh-w9H2dVPkdcArxt6d9pmf6gAgAfes';
 
@@ -53,13 +54,16 @@ const Customer = () => {
     {
       !customer ?
         <LoaderSpinner/>
-        : <>
-          <h2>{name}</h2><br/><br/>
-          <b>E-mail:</b> {customer.email}<br/><br/>
-          <b>Gender:</b> {customer.gender}<br/><br/>
-          <b>Company:</b> {customer.company}<br/><br/>
-          <b>Title:</b> {customer.title}<br/><br/>
-          <b>City:</b> {customer.city}<br/><br/>
+        :
+        <> 
+          <CustomerData>
+            <h2>{name}</h2><br/><br/>
+            <b>E-mail:</b> {customer.email}<br/><br/>
+            <b>Gender:</b> {customer.gender}<br/><br/>
+            <b>Company:</b> {customer.company}<br/><br/>
+            <b>Title:</b> {customer.title}<br/><br/>
+            <b>City:</b> {customer.city}<br/><br/>
+          </CustomerData>
           <Map ref={mapRef}/>
           <SimpleBtn onClick={() => history.goBack()}>&lt; Back</SimpleBtn>
         </>
