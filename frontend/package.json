@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start-dev": "react-scripts start",
-    "start": "REACT_APP_ONLINE_ENV=1 serve -s build",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

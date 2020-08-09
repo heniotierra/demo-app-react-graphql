@@ -29,7 +29,7 @@ To run the apps (frontend and backend) independently:
 The frontend:
    
     $ cd frontend
-    $ npm start
+    $ npm start-dev
 
 The backend:
    
