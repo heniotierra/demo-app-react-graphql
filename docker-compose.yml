@@ -21,6 +21,6 @@ services:
         stdin_open: true # docker run -i
         tty: true        # docker run -t
         ports:
-            - "5000:5000"
+            - "3000:3000"
         environment:
             - CHOKIDAR_USEPOLING=true
