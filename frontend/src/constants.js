@@ -10,6 +10,8 @@ export const HereJsKey = process.env.HERE_JS_API_KEY ||
   'oIFgxdTYc381Qh-w9H2dVPkdcArxt6d9pmf6gAgAfes';
 
 export const baseApiURL = process.env.BASE_API_URL ||
-  'http://localhost:8000/';
+  (process.env.REACT_APP_ONLINE_ENV === "1" ? 
+    'https://oowlish-challenge-backend.herokuapp.com/' 
+    : 'http://localhost:8000/');
 
 export const paginationLimit = 12;
