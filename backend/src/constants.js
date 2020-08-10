@@ -1,4 +1,3 @@
-const HereJsKey = process.env.HERE_JS_API_KEY ||
-  'oIFgxdTYc381Qh-w9H2dVPkdcArxt6d9pmf6gAgAfes';
+const HereJsKey = process.env.HERE_JS_API_KEY;
 
 module.exports = { HereJsKey };

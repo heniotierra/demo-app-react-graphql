@@ -10,6 +10,8 @@ services:
         volumes:
             - ./backend:/app
             - /app/node_modules
+        env_file:
+            - ./backend/.env-dev
     frontent:
         container_name: oowlish-challenge-frontend
         build:
@@ -24,3 +26,5 @@ services:
             - "3000:3000"
         environment:
             - CHOKIDAR_USEPOLING=true
+        env_file:
+            - ./frontend/.env-dev
