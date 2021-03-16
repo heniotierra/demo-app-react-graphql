@@ -1,6 +1,6 @@
 This is a repository for
 
-Oowlish Challenge App
+Demo App
 =====================
 
 Instructions

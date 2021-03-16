@@ -14,17 +14,13 @@ const HereMapsService = {
    * @param {string} address      A full or partial address
    */
   getCoordinates: async address =>
-    await axios.get(`${hereMapsGeocodeApiUrl}${address}`)
-      .then(res => {
-        if (res.data && res.data.items && res.data.items.length) {
-          return res.data.items[0].position;
-        } else {
-          return {};
-        }
-      })
-      .catch(_ => {
-        return {};
-      })
+    const res = await axios.get(`${hereMapsGeocodeApiUrl}${address}`);
+
+    if (res.data && res.data.items && res.data.items.length) {
+      return res.data.items[0].position;
+    } else {
+      return {};
+    }
 };
 
 module.exports = HereMapsService;

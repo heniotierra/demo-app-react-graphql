@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "0.1.0",
   "description": "Express.js app",
-  "author": "Henio tierra <heniotster@gmail.com>",
+  "author": "Henio Tierra <heniotster@gmail.com>",
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",

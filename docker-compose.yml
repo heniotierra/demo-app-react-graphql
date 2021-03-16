@@ -1,7 +1,7 @@
 version: "3.7"
 services:
     backend:
-        container_name: oowlish-challenge-backend
+        container_name: demo-backend
         build:
             context: backend
             dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
             - ./backend:/app
             - /app/node_modules
     frontent:
-        container_name: oowlish-challenge-frontend
+        container_name: demo-frontend
         build:
             context: frontend
             dockerfile: Dockerfile

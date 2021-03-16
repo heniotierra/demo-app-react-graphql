@@ -34,7 +34,7 @@ const Navigation = () => {
           }
         </div>
         <div className="app-name">
-          <span>Oowlish Challenge</span>
+          <span>Challenge</span>
         </div>
         <div className="logout-btn" >
         {

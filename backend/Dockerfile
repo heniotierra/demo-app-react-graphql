@@ -1,8 +1,10 @@
-FROM node:10-alpine
+FROM node:15.0.0
 
 WORKDIR /app
 
 COPY package*.json ./
+
+RUN npm cache clean --force
 
 RUN npm install
 
